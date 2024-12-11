@@ -1,0 +1,23 @@
+<section class="container">
+    <div class="header">
+      <div class="back-arrow" (click)="goBack()">
+        <img src="../../../assets/arrow.png" alt="Back">
+      </div>
+      <div class="header-text">
+        <h2>Gestion de Infraestructura</h2>
+      </div>
+    </div>
+    
+    <div class="card-principal">
+      <div class="text-card-principal">
+        <h3>Selecciona una opción</h3>
+      </div>
+  
+      <button class="action-button solicitar-button" (click)="navigateToActivos()">Gestionar Activos</button>
+      <button class="action-button solicitar-button" (click)="navigateToEdificios()">Gestionar Edificios</button>
+      <button class="action-button solicitar-button" (click)="navigateToSector()">Gestionar Sectores</button>
+      <button class="action-button solicitar-button" (click)="navigateToPiso()">Gestionar Pisos</button>
+      <button class="action-button solicitar-button" (click)="navigateToUbicacion()">Gestionar Ubicaciones </button>
+      <button class="action-button solicitar-button" (click)="navigateToUsuario()">Gestionar Usuarios </button>
+    </div>
+  </section>

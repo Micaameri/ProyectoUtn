@@ -1,0 +1,133 @@
+
+.header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 20px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+
+.header img {
+    width: 80px;
+    height: 80px;
+}
+
+.header p {
+    font-size: 18px;
+    font-weight: bold;
+    color: #5F96E9;
+    margin: 0;
+}
+
+
+section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #ffffff;
+    padding: 50px;
+    height: 80vh;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding-top: 100px;
+}
+
+
+.container {
+    width: 600px;
+    height: auto;
+    background-color: #ffffff;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 20px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.utn_logo img {
+    width: 80px;
+    height: 80px;
+}
+
+.texto_logo p {
+    font-size: 18px;
+    color: #878787;
+    margin: 0;
+}
+
+.texto {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.texto_titulo h1 {
+    margin: 0;
+    font-size: 24px;
+}
+
+.texto_titulo h3 {
+    margin: 0;
+    margin-top: 10px;
+    font-size: 18px;
+}
+
+.texto_parrafo {
+    text-align: left;
+    margin-top: 30px;
+    padding: 5px;
+    font-size: 16px;
+}
+
+.roles-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 40px;
+    margin-bottom: 20px;
+}
+
+.roles-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 15px;
+}
+
+.roles-img {
+    width: 80px;
+    height: 80px;
+    background-color: #6AA2E6;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+
+.roles-img:hover {
+    transform: scale(1.1);
+}
+
+.roles-img img {
+    width: 50px;
+    height: 50px;
+}
+
+.roles-titulo {
+    margin-top: 10px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #333;
+}

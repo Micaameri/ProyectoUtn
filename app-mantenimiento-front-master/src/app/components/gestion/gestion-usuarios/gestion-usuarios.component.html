@@ -1,0 +1,21 @@
+<section class="container">
+    <div class="header">
+      <div class="back-arrow" (click)="goBack()">
+        <img src="../../../assets/arrow.png" alt="Back">
+      </div>
+      <div class="header-text">
+      <h2>Gestión de Usuarios</h2>
+      </div>
+    </div>
+    <div class="card-principal">
+        <h3>Lista de Usuarios</h3>
+        <div *ngFor="let usuario of usuarios" class="item">
+          <div class="info">
+            <p class="title">{{ usuario.nombre }}</p>
+            <p class="title">{{ usuario.apellido }}</p>
+            <p class="title">{{ usuario.area }}</p>
+          </div>
+          <span class="delete" (click)="eliminarUsuario(usuario.id_usuario!)">X</span>
+        </div>
+      </div>
+    </section>

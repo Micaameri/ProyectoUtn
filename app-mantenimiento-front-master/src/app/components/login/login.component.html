@@ -1,0 +1,35 @@
+<section>
+  <div class="header">
+    <div class="utn_logo">
+        <img src="../../../assets/utn.png" alt="Logo UTN">
+    </div>
+    <p>Universidad Tecnológica Nacional </p>
+</div>
+    <div class="container">
+        
+        <div class="texto">
+            <div class="texto_titulo">
+                <h1>¡Bienvenido!</h1>
+                <h3>Sistema de Gestión de Mantenimiento FRVT</h3>
+            </div>
+            <div class="texto_parrafo">
+                <p>Loguearse como:</p>
+            </div>
+        </div>          
+        <div class="roles-container">
+            <div class="roles-item" (click)="navigateToLoginForm('operario','../../../assets/construction.png')">
+              <div class="roles-img">
+                <img src="../../../assets/worker.png" alt="Operario">
+              </div>
+              <div class="roles-titulo">Operario</div>
+            </div>
+            <div class="roles-item" (click)="navigateToLoginForm('administrativo','../../../assets/administrator.jpg')">
+              <div class="roles-img">
+                <img src="../../../assets/admin.png" alt="Admin">
+              </div>
+              <div class="roles-titulo">Administrador</div>
+            </div>
+          </div>
+    </div>
+</section>
+

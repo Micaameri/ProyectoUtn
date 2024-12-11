@@ -1,0 +1,123 @@
+<section class="container">
+  <div class="header">
+    <div class="back-arrow" (click)="goBack()">
+      <img src="../../../assets/arrow.png" alt="Back">
+    </div>
+    <div class="header-text">
+      <h2>Historial Órdenes de Trabajo</h2>
+    </div>
+  </div>
+  
+  <div class="card">
+    <div class="text-card">
+      <h3>Filtrar órdenes</h3>
+      <div class="filter-container">
+        
+        <div class="filter-group">
+          <label>Filtrar por Activos:</label>
+          <div class="dropdown">
+            <button class="dropdown-button" (click)="toggleActivoDropdown()">
+              {{ filtroActivo.length > 0 ? filtroActivo.length + ' activos seleccionados' : 'Seleccionar activos' }}
+            </button>
+            <div class="dropdown-content" *ngIf="activoDropdownVisible">
+              <div *ngFor="let activo of activos" class="checkbox-item">
+                <input
+                  type="checkbox"
+                  [value]="activo.id_activo"
+                  (change)="onCheckboxChange($event, activo.id_activo)"
+                  [checked]="filtroActivo.includes(activo.id_activo)"
+                />
+                {{ activo.tipo }}
+              </div>
+            </div>
+          </div>
+        </div>
+
+        
+        <div class="filter-group">
+          <label>Filtrar por Operario:</label>
+          <div class="dropdown">
+            <button class="dropdown-button" (click)="toggleOperarioDropdown()">
+              {{ filtroOperario.length > 0 ? filtroOperario.length + ' operarios seleccionados' : 'Seleccionar operarios' }}
+            </button>
+            <div class="dropdown-content" *ngIf="operarioDropdownVisible">
+              <div *ngFor="let operario of operarios" class="checkbox-item">
+                <input
+                  type="checkbox"
+                  [value]="operario.id_usuario"
+                  (change)="onCheckboxOperarioChange($event, operario.id_usuario)"
+                  [checked]="filtroOperario.includes(operario.id_usuario)"
+                />
+                {{ operario.nombre }} {{ operario.apellido }}
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="filter-group">
+          <label>Fecha:</label>
+          <input
+            type="date"
+            class="filter-input"
+            [(ngModel)]="filtroFecha"
+            (change)="onFechaChange()"
+          />
+        </div>
+
+  
+        <div class="filter-group">
+          <label>Estado:</label>
+          <select class="filter-input" [(ngModel)]="filtroEstado" (change)="onEstadoChange()">
+            <option value="">Seleccionar Estado</option>
+            <option value="pendiente">Pendiente</option>
+            <option value="completada">Completada</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="filter-button-container">
+        <button class="boton-busqueda" (click)="filtrarOrdenes()">Filtrar</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="text-card">
+      <h3>Órdenes de Trabajo</h3>
+    </div>
+ 
+ <div class="contenedor">   
+    <div *ngIf="listaOrdenes.length > 0; else noOrders">
+      <div class="solicitud-item" *ngFor="let ot of listaOrdenes">
+        <div class="solicitud-info">
+          <p class="solicitud-title">{{ ot.activo_tipo }}</p>
+          <small><span class="title-static">Tarea:</span> {{ ot.tarea_descripcion }}</small>
+          <small><span class="title-static">Fecha:</span> {{ ot.fecha | date: 'dd/MM/yyyy' }}</small>
+          <small><span class="title-static">Ubicación:</span> {{ ot.ubicacion_nombre }}</small>
+          <small><span class="title-static">Edificio:</span> {{ ot.edificio_nombre }}</small>
+          <small><span class="title-static">Piso:</span> {{ ot.piso_nombre }}</small>
+          <small><span class="title-static">Sector:</span> {{ ot.sector_nombre }}</small>
+          <small><span class="title-static">Operario:</span> {{ ot.usuario_nombre }}</small>
+          <small><span class="title-static">Código Único:</span> {{ ot.codigo_unico }}</small>
+          <small><span class="title-static">Estado:</span> {{ ot.estado ? 'Pendiente' : 'Completada' }}</small>
+          <small><span class="title-static">Observaciones:</span> {{ ot.observaciones }}</small>
+          <small> <span class="title-static">Tiempo empleado:</span> {{ segundosAMinutos(ot.tiempo_empleado) }}
+          </small>
+          
+          <button class="boton-eliminar-individual" (click)="eliminarOrden(ot.orden_trabajo_id!)">Eliminar</button>
+          </div>
+          <span class="solicitud-id">ID: {{ ot.orden_trabajo_id }}</span>
+          
+      </div>
+    </div>
+  </div>
+</div>
+    <ng-template #noOrders>
+      <p>No hay órdenes de trabajo para mostrar con los filtros seleccionados.</p>
+    </ng-template>
+  
+</section>
+
+
+
+

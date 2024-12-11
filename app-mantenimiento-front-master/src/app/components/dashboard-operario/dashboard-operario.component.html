@@ -1,0 +1,44 @@
+<section class="orden-trabajo-container">
+  <div class="header">
+    <div class="back-arrow" (click)="goBack()">
+      <img src="../../../assets/arrow.png" alt="Back">
+    </div>
+    <div class="header-text">
+      <h2>Panel de Control - Operario</h2>
+    </div>
+  </div>
+  
+  <div class="card-principal">
+    <div class="text-card-principal">
+      <h1>Bienvenido, {{ nombre }}</h1>
+      <p>Revisa tus Ordenes de Trabajo pendientes</p>
+    </div>
+  </div>
+
+  <div class="card-secundario">
+    <div class="text-card-secundario">
+      <p>Mis Ordenes de Trabajo</p>
+    </div>
+
+      <div class="solicitud-item" *ngFor="let ot of ordenesPendientes">
+        <div class="solicitud-info">
+          <p class="solicitud-title">{{ ot.activo_tipo }}</p>
+          <small><span class="title-static">Tarea:</span> {{ ot.tarea_descripcion }}</small>
+          <small><span class="title-static">Fecha:</span> {{ ot.fecha | date: 'dd/MM/yyyy' }}</small>
+          <small><span class="title-static">Ubicación:</span> {{ ot.ubicacion_nombre }}</small>
+          <small><span class="title-static">Edificio:</span> {{ ot.edificio_nombre }}</small>
+          <small><span class="title-static">Piso:</span> {{ ot.piso_nombre }}</small>
+          <small><span class="title-static">Sector:</span> {{ ot.sector_nombre }}</small>    
+          <small><span class="title-static">Observaciones:</span> {{ ot.observaciones }}</small>
+          </div>
+      <button class="comenzar" (click)="comenzarTarea(ot.orden_trabajo_id)">Comenzar</button>
+      <button class="finalizar" (click)="finalizarTarea(ot.orden_trabajo_id)">Finalizar</button>
+    </div>
+  </div>
+
+</section>
+
+
+  
+
+

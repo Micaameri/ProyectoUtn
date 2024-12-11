@@ -1,0 +1,38 @@
+<section class="container">
+    <div class="header">
+      <div class="back-arrow" (click)="goBack()">
+        <img src="../../../assets/arrow.png" alt="Back">
+      </div>
+      <div class="header-text">
+      <h2>Gestión de Edificios</h2>
+      </div>
+    </div>
+  
+    <div class="card-principal">
+      <h3>Nuevo Edificio</h3>
+      <p>Completa los campos para agregar un nuevo edificio</p>
+      <div class="form-body">
+        <div class="form-group">
+          <label for="nombre">Nombre del Edificio:</label>
+          <input id="nombre" class="form-control" [(ngModel)]="nuevoEdificio.nombre">
+        </div>
+        <div class="form-group">
+          <label for="direccion">Dirección:</label>
+          <input id="direccion" class="form-control" [(ngModel)]="nuevoEdificio.direccion">
+        </div>
+        <button (click)="crearEdificio()" class="submit-button">Agregar Edificio</button>
+      </div>
+    </div>
+  
+    <div class="card-principal">
+      <h3>Lista de Edificios</h3>
+      <div *ngFor="let edificio of edificios" class="item">
+        <div class="info">
+          <p class="title">{{ edificio.nombre }}</p>
+          <small>{{ edificio.direccion }}</small>
+        </div>
+        <span class="delete" (click)="eliminarEdificio(edificio.id_edificio!)">X</span>
+      </div>
+    </div>
+  </section>
+  

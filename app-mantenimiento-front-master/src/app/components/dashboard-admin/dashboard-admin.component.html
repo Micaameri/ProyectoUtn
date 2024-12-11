@@ -1,0 +1,23 @@
+<section class="orden-trabajo-container">
+  <div class="header">
+    <div class="back-arrow" (click)="goBack()">
+      <img src="../../../assets/arrow.png" alt="Back">
+    </div>
+    <div class="header-text">
+      <h2>Panel de Control - Administrador</h2>
+    </div>
+  </div>
+  
+  <div class="card-principal">
+    <div class="text-card-principal">
+      <h1>Bienvenido, {{ nombre }}</h1>
+
+      <p>Selecciona una opción para comenzar</p>
+    </div>
+
+    <button class="action-button solicitar-button" (click)="navigateToSolicitud()">Solicitar Mantenimiento</button>
+    <button class="action-button registrar-button" (click)="navigateToRegistro()">Registrar Usuario</button>
+    <button class="action-button historial-button" (click)="navigateToHistorial()">Ver historial de OT</button>
+    <button class="action-button historial-button" (click)="navigateToGestion()">Gestion</button>
+  </div>
+</section>

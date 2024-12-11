@@ -1,0 +1,33 @@
+<section class="container">
+    <div class="header">
+      <div class="back-arrow" (click)="goBack()">
+        <img src="../../../assets/arrow.png" alt="Back">
+      </div>
+      <div class="header-text">
+      <h2>Gestión de Ubicaciones</h2>
+      </div>
+    </div>
+    
+    <div class="card-principal">
+      <h3>Nueva Ubicacion</h3>
+      <p>Completa los campos para generar una nueva ubicacion </p>
+      <div class="form-body">
+        <div class="form-group">
+          <label for="sector">Nombre de la ubicacion:</label>
+          <input id="sector" class="form-control" [(ngModel)]="nuevaUbicacion.ubicacion">
+        </div>
+        <button (click)="crearUbicacion()" class="submit-button">Generar Ubicacion</button>
+      </div>
+    </div>
+  
+    <div class="card-principal">
+      <h3>Lista de Ubicaciones</h3>
+      <div *ngFor="let ubicacion of ubicaciones" class="item">
+        <div class="info">
+          <p class="title">{{ ubicacion.ubicacion }}</p>
+        </div>
+        <span class="delete" (click)="eliminarUbicacion(ubicacion.id_ubicacion_activo!)">X</span>
+      </div>
+    </div>
+  </section>
+  

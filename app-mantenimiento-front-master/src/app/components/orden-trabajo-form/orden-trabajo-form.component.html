@@ -1,0 +1,114 @@
+<section class="generar-orden-container">
+    <div class="form-header">
+        <div class="back-arrow" (click)="goBack()">
+            <img src="../../../assets/arrow.png" alt="Back">
+          </div>
+      <div class="form-title">
+        <h2>Generar Orden de trabajo</h2>
+        <p>Complete los siguientes datos para solicitar el trabajo</p>
+      </div>
+    </div>
+  
+    <div class="form-body">
+      <div class="form-group">
+        <label for="edificio">Edificio:</label>
+        <select id="edificio" class="form-control" [(ngModel)]="ordenTrabajo.edificio" (change)="onEdificioChange($event)">
+          <option value="">Seleccione un edificio</option>
+          <option *ngFor="let edificio of getUniqueEdificios()" [value]="edificio.id_edificio">{{ edificio.nombre }}</option>
+        </select>
+      </div>
+  
+      <div class="form-group">
+        <label for="piso">Piso/Nivel:</label>
+        <select id="piso" class="form-control" [(ngModel)]="ordenTrabajo.piso" (change)="onPisoChange($event)">
+          <option value="">Seleccione un piso o nivel</option>
+          <option *ngFor="let piso of getUniquePisos()" [value]="piso.id_piso">{{ piso.piso }}</option>
+        </select>
+      </div>
+  
+      <div class="form-group">
+        <label for="sector">Sector:</label>
+        <select id="sector" class="form-control" [(ngModel)]="ordenTrabajo.sector" (change)="onSectorChange($event)">
+          <option value="">Seleccione un sector</option>
+          <option *ngFor="let sector of getUniqueSectores()" [value]="sector.id_sector">{{ sector.sector }}</option>
+        </select>
+      </div>
+  
+      <div class="form-group">
+        <label for="ubicacion">Ubicación:</label>
+        <select id="ubicacion" class="form-control" [(ngModel)]="ordenTrabajo.ubicacion" (change)="onUbicacionChange($event)">
+          <option value="">Seleccione una ubicación</option>
+          <option *ngFor="let ubicacion of getUniqueUbicaciones()" [value]="ubicacion.id_ubicacion_activo">{{ ubicacion.ubicacion }}</option>
+        </select>
+      </div>
+
+        <div class="form-group">
+          <label  for ="tipoTarea">Tipo de Tarea:</label>
+          <select id="tipoTarea" class="form-control" [(ngModel)]="ordenTrabajo.tipo_tarea" >
+            <option value=""> Seleccione un tipo de tarea </option>
+            <option value="inspeccion">Inspección</option>
+            <option value="prev-planif">Prevención Planificada</option>
+            <option value="no-planif">No Planificada</option>
+          </select>
+       </div>
+
+          <div class="form-group center-text" *ngIf="ordenTrabajo.tipo_tarea === 'no-planif'">
+            <label  for="nueva-tarea">Nueva Tarea:</label>
+            <input class="form-control"
+              id="nueva-tarea"
+              type="text"
+              [(ngModel)]="nuevaTarea"
+              placeholder="Describe la tarea no planificada"/>
+          </div>
+    
+      <div class="form-group">
+<label for="activo">Activo:</label>
+<select id="activo" class="form-control" (change)="onActivoChange($event)">
+  <option value="">Seleccione un activo</option>
+  <option *ngFor="let activo of activos" [value]="activo.id_activo">{{ activo.tipo }}</option>
+</select>
+</div>
+
+
+
+<div class="form-group">
+  <label for="tareas">Tareas:</label>
+  <select id="tareas" class="form-control" [(ngModel)]="ordenTrabajo.id_activo_tarea" [disabled]="ordenTrabajo.tipo_tarea === 'no-planif'">
+    <option value="">Seleccione una tarea</option>
+    <option *ngFor="let tarea of getUniqueTareas()" [value]="tarea.id_tarea">{{ tarea.tarea }}</option>
+  </select>
+</div>
+      
+      
+<div class="form-group">
+  <label for="operario">Operario:</label>
+  <select id="operario" class="form-control" [(ngModel)]="ordenTrabajo.operario">
+    <option value="">Seleccione un operario</option>
+    <option *ngFor="let operario of getUniqueOperarios()" [value]="operario.id_usuario">
+      {{ operario.nombre }} {{ operario.apellido }}
+    </option>
+  </select>
+</div>
+      <div class="form-group center-text">
+        <label for="observaciones">Observaciones:</label>
+        <textarea id="observaciones" class="form-control" [(ngModel)]="ordenTrabajo.observaciones" rows="3"></textarea>
+    </div>
+    
+    <div class="form-group">
+        <label for="estado">Estado:</label>
+        <select id="estado" class="form-control" [(ngModel)]="ordenTrabajo.estado">
+            <option [value]="true">Pendiente</option>
+            <option [value]="false">Completada</option>
+        </select>
+    </div>
+    
+      <div class="form-group center-text">
+        <label for="codigo">Código Único:</label>
+        <input id="codigo" class="form-control" [value]="ordenTrabajo.codigo_unico || ''" readonly>
+    </div>
+    
+   
+      <button class="submit-button" (click)="enviarSolicitud()">Enviar Solicitud</button>
+    </div>
+  </section>
+  

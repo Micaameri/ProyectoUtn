@@ -1,0 +1,43 @@
+<section class="container">
+  
+    <div class="header">
+      <div class="back-arrow" (click)="goBack()">
+        <img src="../../../assets/arrow.png" alt="Back">
+      </div>
+      <div class="header-text">
+      <h2>Gestión de Activos</h2>
+      </div>
+    </div>
+    
+    <div class="card-principal">
+      <h3>Nuevo Activo</h3>
+      <p>Completa los campos para generar un nuevo activo</p>
+      <div class="form-body">
+        <div class="form-group">
+          <label for="tipo">Tipo de Activo:</label>
+          <input id="tipo" class="form-control" [(ngModel)]="nuevoActivo.tipo">
+        </div>
+        <div class="form-group">
+          <label for="tag">Tag:</label>
+          <input id="tag" class="form-control" [(ngModel)]="nuevoActivo.tag_diminutivo">
+        </div>
+       
+        <button (click)="crearActivo()" class="submit-button">Generar Activo</button>
+      </div>
+    </div>
+  
+    
+    <div class="card-principal">
+      <h3>Lista de activos</h3>
+      <div *ngFor="let activo of activos" class="item">
+        <div class="info">
+          <p class="title">{{ activo.tipo }}</p>
+          <small>{{ activo.tag_diminutivo }}</small><br>
+          
+        </div>
+        <span class="delete" (click)="eliminarActivo(activo.id_activo!)">X</span>
+
+      </div>
+    </div>
+  </section>
+  
