@@ -305,7 +305,7 @@ zone.js : ~0.14.10
   Una vez autenticado, los operarios tienen acceso a un panel personalizado que les permite gestionar sus ordenes de trabajo.
 </p>
 
-![Panel de control operario](https://github.com/amadoabaca/mantenimientoUTN/blob/master/frontend/public/interfaz/4-panel-operario.png)
+![Panel de control operario](https://github.com/Micaameri/ProyectoUtn/blob/main/app-mantenimiento-front-master/public/interfaz/Panel-op.png)
 
 ---
 
@@ -315,17 +315,17 @@ zone.js : ~0.14.10
   Los administradores tienen acceso a un panel avanzado con opciones para gestionar usuarios, solicitudes y ver el historial de OT.
 </p>
 
-![Panel de control administrador](https://github.com/amadoabaca/mantenimientoUTN/blob/master/frontend/public/interfaz/5-panel-admin.png)
+![Panel de control administrador](https://github.com/Micaameri/ProyectoUtn/blob/main/app-mantenimiento-front-master/public/interfaz/Panel-admin.png)
 
 ---
 
 ## 1. Solicitar orden de trabajo
 
 <p align="left">
-  Los operarios pueden solicitar una orden de trabajo a través de un formulario.
+  Los administradores pueden solicitar una orden de trabajo a través de un formulario.
 </p>
 
-![Solicitar OT](https://github.com/amadoabaca/mantenimientoUTN/blob/master/frontend/public/interfaz/7-generar-orden-trabajo.png)
+![Solicitar OT](https://github.com/Micaameri/ProyectoUtn/blob/main/app-mantenimiento-front-master/public/interfaz/Generar-ot.png)
 
 ---
 
@@ -335,24 +335,24 @@ zone.js : ~0.14.10
   Los administradores tienen la posibilidad de registrar nuevos usuarios en el sistema mediante un formulario de registro.
 </p>
 
-![Registro](https://github.com/amadoabaca/mantenimientoUTN/blob/master/frontend/public/interfaz/8-registro.png)
+![Registro](https://github.com/Micaameri/ProyectoUtn/blob/main/app-mantenimiento-front-master/public/interfaz/Registro.png)
 
 ---
 
 ## 3. Ver el historial de órdenes de trabajo
 
 <p align="left">
-  Consulta el historial de órdenes de trabajo para obtener información sobre tareas anteriores.
+  Los administradores pueden consulta el historial de órdenes de trabajo para obtener información sobre las ordenes registradas.
 </p>
 
-![Historial](https://github.com/amadoabaca/mantenimientoUTN/blob/master/frontend/public/interfaz/9-historial.png)
+![Historial](https://github.com/Micaameri/ProyectoUtn/blob/main/app-mantenimiento-front-master/public/interfaz/Historial.png)
 
 ---
 
-## 4. Visualizar la orden de trabajo
+## 4. Gestionar infraestructura
 
 <p align="left">
-  Detalle de una orden de trabajo específica.
+ Los administradores tienen la opcion de generar o eliminar activos, usuarios, edificios, pisos, sectores o ubicaciones.
 </p>
 
-![Ver OT](https://github.com/amadoabaca/mantenimientoUTN/blob/master/frontend/public/interfaz/6-orden-trabajo.png)
+![Ver OT](https://github.com/Micaameri/ProyectoUtn/blob/main/app-mantenimiento-front-master/public/interfaz/Gestion.png)
