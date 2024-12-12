@@ -87,7 +87,7 @@ export class OrdenTrabajoService {
   }
 
   async eliminarOrden(orden_trabajo_id: number): Promise<OrdenTrabajo> {
-    const response = await fetch(`${this.apiUrl}/${orden_trabajo_id}`, {
+    const response = await fetch(`${this.apiUrl}/orden-trabajo/${orden_trabajo_id}`, {
       method: 'DELETE',
     });
   
