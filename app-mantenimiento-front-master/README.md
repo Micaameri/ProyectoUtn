@@ -275,17 +275,27 @@ zone.js : ~0.14.10
   Elige el perfil asignado para acceder al sistema.
 </p>
 
-![Login](https://github.com/amadoabaca/mantenimientoUTN/blob/master/frontend/public/interfaz/1-login.png)
+![Login](https://github.com/Micaameri/ProyectoUtn/blob/main/app-mantenimiento-front-master/public/interfaz/Login.png)
 
 ---
 
 ## Ingresar usuario y contraseña
 
 <p align="left">
-  Ingresa tus credenciales (usuario y contraseña) para autenticarse en el sistema.
+  Ingresa tus credenciales (usuario y contraseña) para autenticarse en el sistema como operario.
 </p>
 
-![Login](https://github.com/amadoabaca/mantenimientoUTN/blob/master/frontend/public/interfaz/2-login.png)
+![Login](https://github.com/Micaameri/ProyectoUtn/blob/main/app-mantenimiento-front-master/public/interfaz/Login-op.png)
+
+---
+
+## Ingresar usuario y contraseña
+
+<p align="left">
+  Ingresa tus credenciales (usuario y contraseña) para autenticarse en el sistema como administrativo.
+</p>
+
+![Login](https://github.com/Micaameri/ProyectoUtn/blob/main/app-mantenimiento-front-master/public/interfaz/Login-admin.png)
 
 ---
 
