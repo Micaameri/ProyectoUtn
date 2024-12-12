@@ -1,3 +1,6 @@
 [submodule "ProyectoUTN-main-backend"]
 	path = ProyectoUTN-main-backend
 	url = https://github.com/Micaameri/ProyectoUTN-main-backend.git
+[submodule "Db-mantenimiento"]
+	path = Db-mantenimiento
+	url = https://github.com/Micaameri/Db-mantenimiento.git
